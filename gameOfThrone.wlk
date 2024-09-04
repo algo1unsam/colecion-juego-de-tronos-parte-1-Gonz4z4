@@ -1,7 +1,8 @@
 object daenerys{
     const property artefactos = #{}
     var capacidad= 2
-    
+    const historia= []
+
     method encontrar(artefacto){
         if (artefactos.size()<capacidad){
             artefactos.add(artefacto)
@@ -20,17 +21,13 @@ object daenerys{
     method capacidad(){
         return capacidad
     } 
-    method posee() {
-        const posesiones =#{}
-        posesiones.addAll(castillo.artefactos())
-        posesiones.addAll(artefactos())
-        return posesiones
+    method posesiones(artefacto) {
+        return artefactos + castillo.artefactos() 
     }
-    method historial(){
-        const historial= []
-        historial.addAll(castillo.artefactos())
-        historial.addAll(artefactos)
-        return historial
+    method posee(elemento) = self.posesiones().contain(elemento)
+    method historia(artefacto){
+        historia.add(artefacto)
+        return historia
         
     }
 

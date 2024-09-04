@@ -25,8 +25,9 @@ test "castillo" {
 
 test "posesiones" {
 	
-	castillo.agregarArtefactos(#{collar, espada})
-	
+	daenerys.encontrar(collar)
+	daenerys.encontrar(espada)
+	daenerys.volverACasa()
 	daenerys.encontrar(armadura)
 	assert.equals(#{collar, armadura, espada}, daenerys.posesiones())
 	assert.that(daenerys.posee(armadura))
